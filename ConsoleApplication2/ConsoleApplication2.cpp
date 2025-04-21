@@ -7,6 +7,8 @@
 #include <Windows.h>
 using namespace std;
 
+using namespace std;
+
 struct info {
     int watch = 1;
     std::string name;
@@ -24,9 +26,12 @@ struct location_ {
     vector <portal_> p;
 };
 
-location_ room[3];
+location_ room[5];
 
 info player;
+
+void intervio() {
+}
 
 void intervio();
 void game();
@@ -200,10 +205,16 @@ void InitGame() {
 
 
     room[0].loc_name = "Ресепшен";
-    room[0].p.push_back({ "q", 1 });
+    room[0].p.push_back({ "69", 1 });
     room[0].p.push_back({ "Туалет", 2 });
-    room[1].loc_name = "бухгалтерия";
+
+    room[1].loc_name = "Бухгалтерия";
+    room[1].p.push_back({ "44", 3 });
+    room[1].p.push_back({ "Завод", 4 });
+
     room[2].loc_name = "Тубзик";
+    room[3].loc_name = "Пыточная";
+    room[4].loc_name = "Отдел производства";
 
 }
 
@@ -212,13 +223,17 @@ int main() {
     setlocale(LC_ALL, "Russian");
     SetConsoleCP(1251);
 
-    cout << "Как вас зовут?\n";
+    SetConsoleCP(1251);
 
-    //std::cin >>player.name;
+    cout << "Как вас зовут?\n";
+    std::cin >> player.name;
+
+    /* start();*/
+     //std::cin >>player.name;
 
 
     InitGame();
-    
+
     string chouse;
 
     cout << "Вы находитесь: " << room[player.current_loc].loc_name << endl;
@@ -231,25 +246,53 @@ int main() {
 
             cout << room[player.current_loc].p[i].portal_name << endl;
 
-            
+
         }
-        
-            cin >> chouse;
 
-            for (int i = 0; i < room[player.current_loc].p.size(); i++) {
-                if (chouse == room[player.current_loc].p[i].portal_name) {
+        cin >> chouse;
 
-                    player.current_loc = room[player.current_loc].p[i].target;
+        for (int i = 0; i < room[player.current_loc].p.size(); i++) {
+            if (chouse == room[player.current_loc].p[i].portal_name) {
 
-                    cout << "Вы переместились: " << room[player.current_loc].loc_name;
-                }
+                player.current_loc = room[player.current_loc].p[i].target;
+
+                cout << "Вы переместились: " << room[player.current_loc].loc_name << endl;
+
             }
+            else if (chouse == room[player.current_loc].p[i].portal_name) {
+                player.current_loc = room[player.current_loc].p[i].target;
+                cout << "Вы переместились: " << room[player.current_loc].loc_name << endl;
+
+            }
+        }
+
+        string chouse2;
+        cin >> chouse2;
+
+        for (int i = 1; i < room[player.current_loc].p.size(); i++) {
+
+            cout << room[player.current_loc].p[i].portal_name << endl;
+
+
+        }
+
+
+        for (int i = 2; i < room[player.current_loc].p.size(); i++) {
+            if (chouse == room[player.current_loc].p[i].portal_name) {
+
+                player.current_loc = room[player.current_loc].p[i].target;
+
+                cout << "Вы переместились: " << room[player.current_loc].loc_name << endl;
+
+            }
+            else if (chouse == room[player.current_loc].p[i].portal_name) {
+                player.current_loc = room[player.current_loc].p[i].target;
+                cout << "Вы переместились: " << room[player.current_loc].loc_name << endl;
+
+            }
+        }
 
     }
-    
-    
-   
-    //start();
 
 
 }
