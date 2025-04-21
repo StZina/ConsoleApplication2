@@ -223,76 +223,7 @@ int main() {
     setlocale(LC_ALL, "Russian");
     SetConsoleCP(1251);
 
-    SetConsoleCP(1251);
-
-    cout << "Как вас зовут?\n";
-    std::cin >> player.name;
-
-    /* start();*/
-     //std::cin >>player.name;
-
-
-    InitGame();
-
-    string chouse;
-
-    cout << "Вы находитесь: " << room[player.current_loc].loc_name << endl;
-
-    cin >> chouse;
-
-    if (chouse == "go") {
-
-        for (int i = 0; i < room[player.current_loc].p.size(); i++) {
-
-            cout << room[player.current_loc].p[i].portal_name << endl;
-
-
-        }
-
-        cin >> chouse;
-
-        for (int i = 0; i < room[player.current_loc].p.size(); i++) {
-            if (chouse == room[player.current_loc].p[i].portal_name) {
-
-                player.current_loc = room[player.current_loc].p[i].target;
-
-                cout << "Вы переместились: " << room[player.current_loc].loc_name << endl;
-
-            }
-            else if (chouse == room[player.current_loc].p[i].portal_name) {
-                player.current_loc = room[player.current_loc].p[i].target;
-                cout << "Вы переместились: " << room[player.current_loc].loc_name << endl;
-
-            }
-        }
-
-        string chouse2;
-        cin >> chouse2;
-
-        for (int i = 1; i < room[player.current_loc].p.size(); i++) {
-
-            cout << room[player.current_loc].p[i].portal_name << endl;
-
-
-        }
-
-
-        for (int i = 2; i < room[player.current_loc].p.size(); i++) {
-            if (chouse == room[player.current_loc].p[i].portal_name) {
-
-                player.current_loc = room[player.current_loc].p[i].target;
-
-                cout << "Вы переместились: " << room[player.current_loc].loc_name << endl;
-
-            }
-            else if (chouse == room[player.current_loc].p[i].portal_name) {
-                player.current_loc = room[player.current_loc].p[i].target;
-                cout << "Вы переместились: " << room[player.current_loc].loc_name << endl;
-
-            }
-        }
-
-    }
+   
 
 
 }
