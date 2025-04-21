@@ -30,8 +30,7 @@ location_ room[5];
 
 info player;
 
-void intervio() {
-}
+
 
 void intervio();
 void game();
@@ -222,6 +221,18 @@ void InitGame() {
 int main() {
     setlocale(LC_ALL, "Russian");
     SetConsoleCP(1251);
+    InitGame();
+
+
+    for (int i = 0; i < 4; i++) {
+        cout << room[i].loc_name << endl;
+    }
+   
+
+
+    
+    
+
 
    
 
