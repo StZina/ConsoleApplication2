@@ -13,6 +13,7 @@ struct info {
     int watch = 1;
     std::string name;
     int current_loc = 0;
+    bool life;
 
 };
 
@@ -223,15 +224,26 @@ int main() {
     SetConsoleCP(1251);
     InitGame();
 
-
-    for (int i = 0; i < 4; i++) {
-        cout << room[i].loc_name << endl;
-    }
-   
-
-
+    string a;
     
     
+
+
+        cin >> a;
+
+        if (a == "go") {
+
+            for (int i = 0; i < room[player.current_loc].p.size(); i++) {
+
+                cout << "Portal: " << room[player.current_loc].p[i].portal_name << endl;
+            }
+
+        
+          
+        }
+
+    
+
 
 
    
